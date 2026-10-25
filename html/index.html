@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARENT - Katalóg vozidiel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-btn" aria-label="Otvoriť menu">
+            <span class="hamburger-icon"></span>
+        </label>
+
+        <a href="index.html" class="brand-logo">CARENT</a>
+
+        <div class="header-actions">
+            <a href="#" class="btn-outline-light">Prihlásenie / Registrácia</a>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="layout.html">Domov</a></li>
+                <li><a href="index.html" class="active">Prenájom (Katalóg áut)</a></li>
+                <li><a href="#">Zdieľanie</a></li>
+                <li><a href="#">O nás</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li class="nav-divider"></li>
+                <li><a href="#">Moje rezervácie</a></li>
+                <li><a href="#">Pomoc</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main-content">
+
+    <!-- Sekcia filtrovania vozidiel -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Vyberte si svoje auto</h1>
+                <p>Nájdite vozidlo podľa svojich predstáv</p>
+            </div>
+
+            <form class="filter-form" action="#" method="get">
+                <div class="filter-grid">
+                    <div class="form-group">
+                        <label for="brand">Značka</label>
+                        <select id="brand" name="brand">
+                            <option value="">Všetky značky</option>
+                            <option value="audi">Audi</option>
+                            <option value="bmw">BMW</option>
+                            <option value="ford">Ford</option>
+                            <option value="mclaren">McLaren</option>
+                            <option value="porsche">Porsche</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="body-type">Karoséria</label>
+                        <select id="body-type" name="body_type">
+                            <option value="">Všetky typy</option>
+                            <option value="suv">SUV</option>
+                            <option value="sedan">Sedan / Liftback</option>
+                            <option value="coupe">Športové kupé</option>
+                            <option value="kombi">Kombi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transmission">Prevodovka</label>
+                        <select id="transmission" name="transmission">
+                            <option value="">Všetky prevodovky</option>
+                            <option value="automat">Automatická</option>
+                            <option value="manual">Manuálna</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fuel">Palivo</label>
+                        <select id="fuel" name="fuel">
+                            <option value="">Všetky druhy</option>
+                            <option value="benzin">Benzín</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="elektro">Elektro</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Cena za deň</label>
+                        <select id="price" name="price">
+                            <option value="">Bez obmedzenia</option>
+                            <option value="80">Do 80 € / deň</option>
+                            <option value="150">Do 150 € / deň</option>
+                            <option value="300">Do 300 € / deň</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="btn-dark">Použiť filtre</button>
+                    <button type="reset" class="btn-text">Vymazať filtre</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sekcia zoznamu vozidiel -->
+    <section class="catalog-section">
+        <div class="container">
+
+            <!-- Lišta s počtom vozidiel a zoradením -->
+            <div class="catalog-toolbar">
+                <p class="results-count">6 vozidiel v ponuke</p>
+                <div class="sort-wrapper">
+                    <label for="sort">Zoradiť podľa</label>
+                    <select id="sort" name="sort">
+                        <option value="price_asc">Cena: od najnižšej</option>
+                        <option value="price_desc">Cena: od najvyššej</option>
+                        <option value="newest">Najnovšie modely</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Grid s kartami vozidiel -->
+            <div class="car-grid">
+
+                <!-- Karta 1: Audi RS6 Avant -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=600&q=80" alt="Audi RS6 Avant 2022" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">Audi RS6 Avant 2022</h2>
+                        <p class="car-price">145,00 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 14 000 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 5 osôb</li>
+                            <li><span>🏁</span> Quattro 4x4</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+                <!-- Karta 2: Ford Explorer -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Ford Explorer Platinum 2022" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">Ford Explorer Platinum</h2>
+                        <p class="car-price">78,90 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 28 500 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 7 osôb</li>
+                            <li><span>⛰</span> 4x4 AWD</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+                <!-- Karta 3: Porsche Panamera -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche Panamera GTS" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">Porsche Panamera GTS</h2>
+                        <p class="car-price">165,00 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 9 200 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 4 osoby</li>
+                            <li><span>🔥</span> Sport Chrono</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+                <!-- Karta 4: BMW M4 Coupé (modro-sivé) -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80" alt="BMW M4 Coupé" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">BMW M4</h2>
+                        <p class="car-price">119,00 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 18 400 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 4 osoby</li>
+                            <li><span>✨</span> M-Packet</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+                <!-- Karta 5: BMW M4 Competition (červeno-oranžové) -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="BMW M4 Competition" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">BMW M4 Competition</h2>
+                        <p class="car-price">129,00 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 6 500 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 4 osoby</li>
+                            <li><span>🛡</span> Karbón paket</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+                <!-- Karta 6: McLaren 720S -->
+                <article class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=600&q=80" alt="McLaren 720S Coupé" class="car-image">
+                    </div>
+                    <div class="car-body">
+                        <h2 class="car-title">McLaren 720S Coupé</h2>
+                        <p class="car-price">290,00 €<span>/ deň</span></p>
+                        <ul class="car-specs">
+                            <li><span>⏱</span> 3 800 km</li>
+                            <li><span>⚙</span> Automat</li>
+                            <li><span>👥</span> 2 osoby</li>
+                            <li><span>🚀</span> 529 kW (720 k)</li>
+                        </ul>
+                        <a href="#" class="btn-card">Prenajať</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <a href="index.html" class="brand-logo">CARENT</a>
+
+        <ul class="footer-links">
+            <li><a href="index.html">Prenájom</a></li>
+            <li><a href="#">Zdieľanie</a></li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="YouTube">YT</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

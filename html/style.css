@@ -1,0 +1,595 @@
+/* ==========================================================================
+   1. PREMENNÉ
+   ========================================================================== */
+:root {
+    --bg-dark: #0f0f0f;
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+    --text-dark: #121212;
+    --text-muted: #666666;
+    --text-light: #ffffff;
+    --border-color: #e2e2e2;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-pill: 50px;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* ==========================================================================
+   2. HLAVIČKA A NAVIGÁCIA
+   ========================================================================== */
+.site-header {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    position: relative;
+}
+
+.brand-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+/* Hamburger tlačidlo */
+.menu-checkbox {
+    display: none;
+}
+
+.menu-btn {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--text-light);
+    transition: 0.25s ease;
+    position: relative;
+}
+
+.hamburger-icon::before {
+    top: -6px;
+}
+
+.hamburger-icon::after {
+    top: 4px;
+}
+
+/* Rozbaľovací panel navigácie */
+.main-nav {
+    position: absolute;
+    top: 76px;
+    left: 20px;
+    width: 250px;
+    background-color: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-md);
+    display: none;
+}
+
+.menu-checkbox:checked ~ .main-nav {
+    display: block;
+}
+
+.menu-checkbox:checked + .menu-btn .hamburger-icon {
+    background-color: transparent;
+}
+
+.menu-checkbox:checked + .menu-btn .hamburger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-checkbox:checked + .menu-btn .hamburger-icon::after {
+    transform: rotate(-45deg);
+    top: -2px;
+}
+
+.nav-list li {
+    margin: 10px 0;
+}
+
+.nav-list a {
+    display: block;
+    padding: 6px 8px;
+    font-size: 0.95rem;
+    color: #cccccc;
+    border-radius: 6px;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--text-light);
+    background-color: #262626;
+}
+
+.nav-divider {
+    height: 1px;
+    background-color: #2e2e2e;
+    margin: 12px 0;
+}
+
+/* ==========================================================================
+   3. PLACEHOLDER PRE ZÁKLADNÝ LAYOUT (layout.html)
+   ========================================================================== */
+.placeholder-box {
+    margin: 80px auto;
+    padding: 60px 30px;
+    max-width: 760px;
+    text-align: center;
+    border: 2px dashed #3a3a3a;
+    border-radius: var(--radius-md);
+    background-color: #161616;
+}
+
+.placeholder-box h1 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.placeholder-box p {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 26px;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   4. SEKCIA FILTROVANIA (index.html)
+   ========================================================================== */
+.filter-section {
+    background-color: var(--bg-white);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-heading h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.form-group select {
+    padding: 11px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-white);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    border: none;
+    padding: 11px 28px;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-dark:hover {
+    opacity: 0.85;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. KATALÓG A KARTY VOZIDIEL
+   ========================================================================== */
+.catalog-section {
+    padding: 36px 0 64px;
+}
+
+.catalog-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.results-count {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-wrapper label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.sort-wrapper select {
+    padding: 9px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-white);
+    font-size: 0.9rem;
+}
+
+/* Grid pre karty áut (3 stĺpce na desktope) */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.car-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.car-card.featured {
+    border-color: var(--bg-dark);
+}
+
+.car-image-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 16px;
+    background-color: #eaeaea;
+}
+
+.car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.car-price {
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.car-price span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Parametre vozidla (km, prevodovka, osoby, palivo) */
+.car-specs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    background-color: var(--bg-light);
+    padding: 10px 8px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.car-specs span {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.car-specs li {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.btn-card {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    border: 1px solid var(--bg-dark);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.btn-card:hover,
+.btn-card-active {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 36px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.9rem;
+    color: #cccccc;
+}
+
+.footer-links a:hover {
+    color: var(--text-light);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-socials a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.footer-socials a:hover {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   7. RESPONZIVITA
+   ========================================================================== */
+
+/* Tablety a menšie notebooky (do 992px) */
+@media (max-width: 992px) {
+    .filter-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .car-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobilné obrazovky (do 640px) */
+@media (max-width: 640px) {
+    .header-inner {
+        height: 64px;
+    }
+
+    .brand-logo {
+        font-size: 1.2rem;
+    }
+
+    .btn-outline-light {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .main-nav {
+        top: 64px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+
+    .section-heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-dark,
+    .btn-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .catalog-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sort-wrapper {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sort-wrapper select {
+        flex: 1;
+    }
+
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-specs {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
