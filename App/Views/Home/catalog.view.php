@@ -1,4 +1,5 @@
 <?php
+
 /** @var \Framework\Support\LinkGenerator $link */
 ?>
 <!-- Sekcia filtrovania vozidiel -->
@@ -96,7 +97,8 @@
             <!-- Karta 1: Audi RS6 Avant -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=600&q=80" alt="Audi RS6 Avant 2022" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=600&q=80"
+                         alt="Audi RS6 Avant 2022" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">Audi RS6 Avant 2022</h2>
@@ -114,7 +116,8 @@
             <!-- Karta 2: Ford Explorer -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Ford Explorer Platinum 2022" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80"
+                         alt="Ford Explorer Platinum 2022" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">Ford Explorer Platinum</h2>
@@ -132,7 +135,8 @@
             <!-- Karta 3: Porsche Panamera -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche Panamera GTS" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80"
+                         alt="Porsche Panamera GTS" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">Porsche Panamera GTS</h2>
@@ -150,7 +154,8 @@
             <!-- Karta 4: BMW M4 Coupé -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80" alt="BMW M4 Coupé" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80"
+                         alt="BMW M4 Coupé" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">BMW M4</h2>
@@ -168,7 +173,8 @@
             <!-- Karta 5: BMW M4 Competition -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="BMW M4 Competition" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80"
+                         alt="BMW M4 Competition" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">BMW M4 Competition</h2>
@@ -186,7 +192,8 @@
             <!-- Karta 6: McLaren 720S -->
             <article class="car-card">
                 <div class="car-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=600&q=80" alt="McLaren 720S Coupé" class="car-image">
+                    <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=600&q=80"
+                         alt="McLaren 720S Coupé" class="car-image">
                 </div>
                 <div class="car-body">
                     <h2 class="car-title">McLaren 720S Coupé</h2>

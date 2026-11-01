@@ -42,7 +42,8 @@ $currentAction = $_GET['a'] ?? 'index';
                     </a>
                 </li>
                 <li>
-                    <a href="<?= $link->url('home.catalog') ?>" class="<?= $currentAction === 'catalog' ? 'active' : '' ?>">
+                    <a href="<?= $link->url('home.catalog') ?>"
+                       class="<?= $currentAction === 'catalog' ? 'active' : '' ?>">
                         Prenájom (Katalóg áut)
                     </a>
                 </li>
