@@ -234,7 +234,7 @@ img {
 }
 
 /* ==========================================================================
-   4. SEKCIA FILTROVANIA (index.html)
+   4. SEKCIA FILTROVANIA A FORMULÁRE
    ========================================================================== */
 .filter-section {
     background-color: var(--bg-white);
@@ -273,14 +273,36 @@ img {
     color: var(--text-muted);
 }
 
-.form-group select {
+.form-group select,
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
     padding: 11px 14px;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
     background-color: var(--bg-white);
+    font-family: inherit;
     font-size: 0.9rem;
+    line-height: 1.5;
     color: var(--text-dark);
+}
+
+.form-group select {
     cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--bg-dark);
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
 }
 
 .filter-actions {
@@ -450,6 +472,26 @@ img {
 .btn-card:hover,
 .btn-card-active {
     background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.card-actions .btn-card {
+    flex: 1;
+}
+
+.btn-danger-card {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-danger-card:hover {
+    background-color: #dc3545;
     color: var(--text-light);
 }
 
