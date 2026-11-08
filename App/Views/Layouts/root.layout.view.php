@@ -14,7 +14,7 @@ $currentAction = $_GET['a'] ?? 'index';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARENT - Autopožičovňa</title>
     <link rel="stylesheet" href="<?= $link->asset('css/style.css') ?>">
-    <link rel="icon" type="image/png" href="<?= $link->asset('favicons/carent-carent-logo.png') ?>">
+    <link rel="icon" type="image/png" href="<?= $link->asset('favicons/carent-logo.png') ?>">
 </head>
 <body class="<?= $currentAction === 'index' ? 'dark-theme' : '' ?>">
 
