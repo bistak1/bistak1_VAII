@@ -14,6 +14,9 @@
             <a href="<?= $link->url('home.create') ?>" class="btn-dark">
                 + Pridať nové vozidlo
             </a>
+            <a href="<?= $link->url('reservation.index') ?>" class="btn-text">
+                Prejsť na rezervácie vozidiel &rarr;
+            </a>
         </div>
     </div>
 </section>
@@ -47,6 +50,10 @@
                             <li><span>🏁</span> <?= e($car->getFeature()) ?></li>
                         </ul>
                         <div class="card-actions">
+                            <a href="<?= $link->url('reservation.create', ['car' => $car->getId()]) ?>"
+                               class="btn-card btn-card-active">
+                                Rezervovať
+                            </a>
                             <a href="<?= $link->url('home.edit', ['id' => $car->getId()]) ?>"
                                class="btn-card">
                                 Upraviť

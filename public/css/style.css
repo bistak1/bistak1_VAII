@@ -238,6 +238,7 @@ img {
    ========================================================================== */
 .filter-section {
     background-color: var(--bg-white);
+    color: var(--text-dark);
     padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -385,6 +386,7 @@ img {
     background-color: var(--bg-white);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
+    color: var(--text-dark);
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -464,6 +466,7 @@ img {
     padding: 11px;
     border: 1px solid var(--bg-dark);
     border-radius: var(--radius-pill);
+    color: var(--text-dark);
     font-weight: 600;
     font-size: 0.9rem;
     margin-top: auto;
